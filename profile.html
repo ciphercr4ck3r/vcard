@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(#6f8fcf,#e6e6e6);
+  text-align: center;
+  margin: 0;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-top: 40px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.role {
+  color: #555;
+}
+
+.card {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://via.placeholder.com/120" class="avatar">
+
+<div class="name" id="name"></div>
+<div class="role" id="job"></div>
+
+<div class="card">
+  <p><b>Phone:</b> <span id="phone"></span></p>
+  <p><b>Email:</b> <span id="email"></span></p>
+  <p><b>Company:</b> <span id="company"></span></p>
+  <p><b>Department:</b> <span id="dept"></span></p>
+</div>
+
+<script>
+const p = new URLSearchParams(window.location.search);
+
+document.getElementById("name").innerText = p.get("name");
+document.getElementById("phone").innerText = p.get("phone");
+document.getElementById("email").innerText = p.get("email");
+document.getElementById("company").innerText = p.get("company");
+document.getElementById("job").innerText = p.get("job");
+document.getElementById("dept").innerText = p.get("dept");
+</script>
+
+</body>
+</html>
